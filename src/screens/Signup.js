@@ -12,14 +12,6 @@ export default function Signup() {
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(
-      JSON.stringify({
-        name: credentials.name,
-        email: credentials.email,
-        password: credentials.password,
-        location: credentials.location,
-      })
-    );
     let response;
     try {
       response = await fetch("http://localhost:5000/api/createuser", {
