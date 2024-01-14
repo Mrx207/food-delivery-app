@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.row.mb-3 {
+  column-gap: 50px;
+}
+
+.card-img {
+  width: 250px;
+  height: 200px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
