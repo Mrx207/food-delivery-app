@@ -16,10 +16,9 @@ export default function Home() {
       },
     });
 
-    response = await response.json();
+    response = await response.json( );
     setFoodItem(response[0]);
     setFoodCat(response[1]);
-    console.log(response);
   };
   useEffect(() => loadData, []);
 
@@ -132,9 +131,8 @@ export default function Home() {
                               className="col-12 col-md-6 col-lg-3"
                             >
                               <Card
-                                img={filterItems.img}
-                                name={filterItems.name}
-                                options={filterItems.options}
+                                foodItem={filterItems}
+                                options={filterItems.options[0]}
                               />
                             </div>
                           );
