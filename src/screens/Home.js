@@ -16,7 +16,7 @@ export default function Home() {
       },
     });
 
-    response = await response.json( );
+    response = await response.json();
     setFoodItem(response[0]);
     setFoodCat(response[1]);
   };
@@ -109,11 +109,9 @@ export default function Home() {
         {foodCat !== []
           ? foodCat.map((data) => {
               return (
-                <div className="row mb-3">
+                <div className="row mb-3" key={data._id}>
                   {" "}
-                  <div key={data._id} className="fs-3 m-3">
-                    {data.CategoryName}
-                  </div>
+                  <div className="fs-3 m-3">{data.CategoryName}</div>
                   <hr />
                   {foodItem !== []
                     ? foodItem
