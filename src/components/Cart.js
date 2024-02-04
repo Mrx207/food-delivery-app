@@ -2,6 +2,7 @@ import React from "react";
 import Delete from "@mui/icons-material/Delete";
 import { useNavigate } from "react-router-dom";
 import { useCart, useDispatchCart } from "../components/ContextReducer";
+import { PORT_URL } from "../url_constant";
 export default function Cart() {
   const navigate = useNavigate();
   let data = useCart();
@@ -22,7 +23,7 @@ export default function Cart() {
     navigate("/myOrder");
     let userEmail = localStorage.getItem("userEmail");
     // console.log(data,localStorage.getItem("userEmail"),new Date())
-    let response = await fetch("http://localhost:5000/api/orderData", {
+    let response = await fetch(`${PORT_URL}/api/orderData`, {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: "POST",

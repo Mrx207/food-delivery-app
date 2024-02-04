@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { PORT_URL } from "../url_constant";
 
 export default function Signup() {
   let navigate = useNavigate();
@@ -14,7 +15,7 @@ export default function Signup() {
     e.preventDefault();
     let response;
     try {
-      response = await fetch("http://localhost:5000/api/createuser", {
+      response = await fetch(`${PORT_URL}/api/createuser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

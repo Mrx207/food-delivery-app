@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { PORT_URL } from "../url_constant";
 
 export default function Login() {
   let navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function Login() {
     );
     let response;
     try {
-      response = await fetch("http://localhost:5000/api/loginuser", {
+      response = await fetch(`${PORT_URL}/api/loginuser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
