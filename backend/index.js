@@ -1,5 +1,13 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
+app.use(
+  cors({
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 const port = process.env.PORT || 5000;
 const mongoDB = require("./db");
 
